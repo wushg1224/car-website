@@ -45,7 +45,6 @@
             display: block;
         }
 
-
         .car {
             box-sizing: border-box;
             padding: 10px;
@@ -99,11 +98,27 @@
             display: flex;
         }
 
-        #search {
-            display: flex;
-            vertical-align: middle;
-            height: 40px;
-            /* vertical center */
+        #search input[type="text"] {
+            border: 2px solid #ccc;
+            padding: 10px;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        #search input[type="text"]:focus {
+            border-color: white;
+            background-color: #e6f7ff;
+            /* Lighter background to highlight focus */
+            box-shadow: 0 0 8px 0 #b3d9ff;
+            /* Adding a soft glow effect */
+            outline: none;
+            /* Remove default focus outline */
+        }
+
+        button[disabled] {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
         }
     </style>
 </head>
@@ -247,11 +262,11 @@
                                      <p>Mileage: ${car.mileage} miles</p>
                                      <p>Availability: ${car.quantity}</p>
                                      <img src="images/${car.image}" alt="${car.brand} ${car.model}" style="width:100%">
-                                     <button class="book" data-id="${car.id}">Rent</button>`;
+                                     <button class="book" data-id="${car.id}" ${car.quantity === 0 ? 'disabled' : ''}>Rent</button>`;
                             container.appendChild(carInfo);
                         });
                         // add event listener to book button
-                        document.querySelectorAll('.book').forEach(item => {
+                        document.querySelectorAll('.book:not([disabled])').forEach(item => {
                             item.addEventListener('click', function () {
                                 const id = item.getAttribute('data-id');
                                 console.log('book ' + id + ' clicked');
