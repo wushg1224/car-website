@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rent Service</title>
+    <style type="text/css">
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+        }
+
+        nav ul li {
+            padding: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav>ul li a {
+            padding: 25px;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            background-color: #333;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+
+        .car {
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            width: 25%;
+            float: left;
+        }
+
+        .car img {
+            width: 100%;
+            height: 200px;
+        }
+
+        #subcategory-brand {
+            display: none;
+            /** dropdown list style vertical float */
+            position: absolute;
+            background-color: #333;
+            color: white;
+            list-style-type: none;
+            width: 150px;
+        }
+
+        #subcategory-brand ul {
+            display: flex;
+            padding: 0px;
+            flex-direction: column;
+        }
+
+        #subcategory-brand li {
+            display: flex;
+        }
+
+        #subcategory-type {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            list-style-type: none;
+            width: 150px;
+        }
+
+
+        #subcategory-type ul {
+            display: flex;
+            padding: 0px;
+            flex-direction: column;
+        }
+
+        #subcategory-type li {
+            display: flex;
+        }
+
+        #search {
+            display: flex;
+            vertical-align: middle;
+            height: 40px;
+            /* vertical center */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav>
+        <div id="logo">
+            <img src="logo.png" alt="Car Rent Service">
+        </div>
+        <ul>
+            <li><a id="home" href="#">Home</a></li>
+            <li>
+                <a id="brand" href="#">Brand</a>
+                <!-- subcategory -->
+                <div id="subcategory-brand">
+                    <ul>
+                        <li><a class="brand" data-brand="bmw" href="#">BMW</a></li>
+                        <li><a class="brand" data-brand="audi" href="#">Audi</a></li>
+                        <li><a class="brand" data-brand="mercedes" href="#">Mercedes</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a id="type" href="#">Type</a>
+                <!-- subcategory -->
+                <div id="subcategory-type">
+                    <ul>
+                        <li><a class="type" data-type="sedan" href="#">Sedan</a></li>
+                        <li><a class="type" data-type="suv" href="#">SUV</a></li>
+                        <li><a class="type" data-type="coupe" href="#">Coupe</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul>
+        <div id="search">
+            <!-- search bar-->
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </nav>
+    <content>
+        <!-- grid view of cars -->
+        <div id="cars">
+            <div class="car">
+                <img src="/web/images/bmw-x5.jpeg" alt="BMW">
+                <h2>BMW</h2>
+                <h3>X5</h3>
+                <p>Price: $100/day</p>
+                <button>Book Now</button>
+            </div>
+            <div class="car">
+                <img src="" alt="Audi">
+                <h2>Audi</h2>
+                <h3>A4</h3>
+                <p>Price: $120/day</p>
+                <button>Book Now</button>
+            </div>
+            <div class="car">
+                <img src="mercedes.jpg" alt="Mercedes">
+                <h2>Mercedes</h2>
+                <h3>G-Class</h3>
+                <p>Price: $150/day</p>
+                <button>Book Now</button>
+            </div>
+            <div class="car">
+                <img src="bmw.jpg" alt="BMW">
+                <h2>BMW</h2>
+                <h3>X5</h3>
+                <p>Price: $100/day</p>
+                <button>Book Now</button>
+            </div>
+            <div class="car">
+                <img src="audi.jpg" alt="Audi">
+                <h2>Audi</h2>
+                <h3>A4</h3>
+                <p>Price: $120/day</p>
+                <button>Book Now</button>
+            </div>
+            <div class="car">
+                <img src="mercedes.jpg" alt="Mercedes">
+                <h2>Mercedes</h2>
+                <h3>G-Class</h3>
+                <p>Price: $150/day</p>
+                <button>Book Now</button>
+            </div>
+        </div>
+    </content>
+    <script>
+
+        // type #brand to toogle display of subcategory-brand
+        document.getElementById('brand').addEventListener('click', function () {
+            console.log('brand clicked');
+            document.getElementById('subcategory-brand').style.display =
+                document.getElementById('subcategory-brand').style.display == 'block' ? 'none' : 'block';
+        });
+
+        // type #type to toogle display of subcategory-type
+        document.getElementById('type').addEventListener('click', function () {
+            console.log('type clicked');
+            document.getElementById('subcategory-type').style.display =
+                document.getElementById('subcategory-type').style.display == 'block' ? 'none' : 'block';
+        });
+
+        function filterCars(brand = '', type = '', search = '') {
+            console.log('filter cars by brand: ' + brand + ' and type: ' + type);
+            const baseURL = '../php/api.php'; // Update this path to the actual URL where your JSON file is hosted
+            const url = `${baseURL}?brand=${encodeURIComponent(brand)}&type=${encodeURIComponent(type)}&search=${encodeURIComponent(search)}`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const container = document.getElementById('cars');
+                    container.innerHTML = '';
+                    data.cars.forEach(car => {
+                        const carInfo = document.createElement('div', { class: 'car' });
+                        carInfo.className = 'car'; // Setting class to "car"
+                        carInfo.innerHTML = `<h2>${car.brand} ${car.model}</h2>
+                                     <p>Type: ${car.type}</p>
+                                     <p>Price: $${car.price} per day</p>
+                                     <p>Seats: ${car.seats}</p>
+                                     <p>Fuel Type: ${car.fuel_type}</p>
+                                     <p>Mileage: ${car.mileage} miles</p>
+                                     <p>Quantity: ${car.quantity}</p>
+                                     <img src="images/${car.image}" alt="${car.brand} ${car.model}" style="width:100%">
+                                     <button>Book Now</button>`;
+                        container.appendChild(carInfo);
+                    });
+                })
+                .catch(error => {
+                    console.error('Fetch error: ', error);
+                });
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            filterCars();
+        });
+
+        // click on brand to filter cars   
+        document.querySelectorAll('.brand').forEach(item => {
+            item.addEventListener('click', function () {
+                console.log('brand clicked');
+                filterCars(item.getAttribute('data-brand'), '', '');
+            });
+        });
+
+        // click on type to filter cars
+        document.querySelectorAll('.type').forEach(item => {
+            item.addEventListener('click', function () {
+                console.log('type clicked');
+                filterCars('', item.getAttribute('data-type'), '');
+            });
+        });
+
+        // click on search to filter cars
+        document.querySelector('button').addEventListener('click', function () {
+            console.log('search clicked');
+            filterCars('', '', document.querySelector('input').value);
+        });
+        //click on home to return to homepage
+        document.getElementById('home').addEventListener('click', function () {
+            console.log('home clicked');
+            filterCars();
+        });
+    </script>
+</body>
+
+</html>

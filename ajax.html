@@ -1,0 +1,72 @@
+ajax note
+
+用则加载，不用就不加载
+
+不需要刷新和加载
+
+HTTP 协议
+
+网络控制台
+
+asynchronous javascript and xml - 无刷新获取数据
+不是新的编程语言，是将现有的标准组合在一起的方式
+
+
+xml extensible markup languages
+标签语言
+用来设计 传输 储存数据
+html-呈现数据 预定义标签
+-被json取代了
+
+ajax
+1/无需刷新页面来对服务器通信
+2/根据用户事件来更新部分页面内容
+
+缺点
+1.无后退
+2.存在跨域问题 （同源）
+3.search engine optimization不友好
+
+http协议
+hypertext transport protocal 规定了浏览器和服务器之间的通信规则
+
+##请求报文
+格式和参数
+请求行
+GET/POST /url HTTP/1.1
+请求头
+Host: atuts.com
+Cookie: name=atuts
+content-type: application/x-www-form-urlencoded
+user-agent: Mozilla/5.0
+空行
+请求体
+username=atuts&password=123456
+
+##响应报文
+
+响应行
+HTTP/1.1 200 OK
+响应头
+Content-Type: text/html；charset=utf-8
+Content-Length: 1024
+Set-Cookie: name=atuts
+空行
+响应体
+<html>
+
+<head>
+
+<body>
+    <h1>hello world</h1>
+</body>
+</head>
+
+</html>
+
+200-响应状态码
+*404 not found
+*403 forbidden
+*500 internal server error
+*200 ok
+*401 unauthorized
