@@ -1,1 +1,112 @@
-{"cars": [{"type": "SUV", "brand": "Audi", "model": "Q3", "price": 130, "image": "audi-q3.jpeg", "quantity": 1, "description": "Compact luxury crossover SUV", "seats": 5, "fuel_type": "Petrol", "mileage": 50000}, {"type": "SUV", "brand": "Audi", "model": "Q7", "price": 150, "image": "audi-q7.jpeg", "quantity": 2, "description": "Full-size luxury SUV", "seats": 7, "fuel_type": "Diesel", "mileage": 60000}, {"type": "Sedan", "brand": "BMW", "model": "M3", "price": 140, "image": "bmw-m3.jpeg", "quantity": 3, "description": "High-performance sports sedan", "seats": 5, "fuel_type": "Petrol", "mileage": 30000}, {"type": "SUV", "brand": "BMW", "model": "X3", "price": 100, "image": "bmw-x3.jpeg", "quantity": 1, "description": "Compact luxury SUV", "seats": 5, "fuel_type": "Petrol", "mileage": 35000}, {"type": "SUV", "brand": "BMW", "model": "X5", "price": 120, "image": "bmw-x5.jpeg", "quantity": 2, "description": "Mid-size luxury SUV", "seats": 5, "fuel_type": "Diesel", "mileage": 40000}, {"type": "Sedan", "brand": "Mercedes", "model": "A-Class", "price": 85, "image": "mercedes-aclass.jpeg", "quantity": 3, "description": "Subcompact executive car", "seats": 5, "fuel_type": "Petrol", "mileage": 20000}, {"type": "Sedan", "brand": "Mercedes", "model": "S-Class", "price": 150, "image": "mercedes-sclass.jpeg", "quantity": 1, "description": "Full-size luxury sedan", "seats": 5, "fuel_type": "Petrol", "mileage": 25000}, {"type": "Sedan", "brand": "Toyota", "model": "Camry", "price": 90, "image": "toyota-camary.jpeg", "quantity": 2, "description": "Mid-size sedan", "seats": 5, "fuel_type": "Hybrid", "mileage": 25000}, {"type": "Hatchback", "brand": "Volkswagen", "model": "Golf", "price": 80, "image": "vw-golf.jpeg", "quantity": 3, "description": "Compact car", "seats": 5, "fuel_type": "Petrol", "mileage": 15000}]}
+{
+    "cars": [
+        {
+            "type": "SUV",
+            "brand": "Audi",
+            "model": "Q3",
+            "price": 130,
+            "image": "audi-q3.jpeg",
+            "quantity": 1,
+            "description": "Compact luxury crossover SUV",
+            "seats": 5,
+            "fuel_type": "Petrol",
+            "mileage": 50000
+        },
+        {
+            "type": "SUV",
+            "brand": "Audi",
+            "model": "Q7",
+            "price": 150,
+            "image": "audi-q7.jpeg",
+            "quantity": 2,
+            "description": "Full-size luxury SUV",
+            "seats": 7,
+            "fuel_type": "Diesel",
+            "mileage": 60000
+        },
+        {
+            "type": "Sedan",
+            "brand": "BMW",
+            "model": "M3",
+            "price": 140,
+            "image": "bmw-m3.jpeg",
+            "quantity": 3,
+            "description": "High-performance sports sedan",
+            "seats": 5,
+            "fuel_type": "Petrol",
+            "mileage": 30000
+        },
+        {
+            "type": "SUV",
+            "brand": "BMW",
+            "model": "X3",
+            "price": 100,
+            "image": "bmw-x3.jpeg",
+            "quantity": 1,
+            "description": "Compact luxury SUV",
+            "seats": 5,
+            "fuel_type": "Petrol",
+            "mileage": 35000
+        },
+        {
+            "type": "SUV",
+            "brand": "BMW",
+            "model": "X5",
+            "price": 120,
+            "image": "bmw-x5.jpeg",
+            "quantity": 2,
+            "description": "Mid-size luxury SUV",
+            "seats": 5,
+            "fuel_type": "Diesel",
+            "mileage": 40000
+        },
+        {
+            "type": "Sedan",
+            "brand": "Mercedes",
+            "model": "A-Class",
+            "price": 85,
+            "image": "mercedes-aclass.jpeg",
+            "quantity": 3,
+            "description": "Subcompact executive car",
+            "seats": 5,
+            "fuel_type": "Petrol",
+            "mileage": 20000
+        },
+        {
+            "type": "Sedan",
+            "brand": "Mercedes",
+            "model": "S-Class",
+            "price": 150,
+            "image": "mercedes-sclass.jpeg",
+            "quantity": 1,
+            "description": "Full-size luxury sedan",
+            "seats": 5,
+            "fuel_type": "Petrol",
+            "mileage": 25000
+        },
+        {
+            "type": "Sedan",
+            "brand": "Toyota",
+            "model": "Camry",
+            "price": 90,
+            "image": "toyota-camary.jpeg",
+            "quantity": 2,
+            "description": "Mid-size sedan",
+            "seats": 5,
+            "fuel_type": "Hybrid",
+            "mileage": 25000
+        },
+        {
+            "type": "Hatchback",
+            "brand": "Volkswagen",
+            "model": "Golf",
+            "price": 80,
+            "image": "vw-golf.jpeg",
+            "quantity": 3,
+            "description": "Compact car",
+            "seats": 5,
+            "fuel_type": "Petrol",
+            "mileage": 15000
+        }
+    ]
+}
